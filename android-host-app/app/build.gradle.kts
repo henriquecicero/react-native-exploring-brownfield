@@ -61,8 +61,8 @@ dependencies {
     implementation(libs.androidx.compose.material3)
 
     // React Native dependencies
-    implementation("com.facebook.react:react-android")
-    implementation("com.facebook.react:hermes-android")
+    implementation(libs.react.android)
+    implementation(libs.hermes.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
