@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -45,7 +46,10 @@ fun MainScreen(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Hello, Android!")
+        Text(
+            text = "Hello, Host App!",
+            style = MaterialTheme.typography.headlineMedium
+        )
         Spacer(modifier = Modifier.height(24.dp))
         Button(
             onClick = {
@@ -53,7 +57,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
                 context.startActivity(intent)
             }
         ) {
-            Text("Open React Native Screen")
+            Text("Open React Native")
         }
     }
 }

@@ -11,8 +11,8 @@ struct ContentView: View {
     @State private var showReactNative = false
     
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Hello, iOS!")
+        VStack(spacing: 24) {
+            Text("Hello, Host App!")
                 .font(.title)
             
             Button("Open React Native") {
