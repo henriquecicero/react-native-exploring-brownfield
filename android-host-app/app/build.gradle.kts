@@ -19,6 +19,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // React Native build config fields
+        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", project.findProperty("newArchEnabled")?.toString() ?: "true")
+        buildConfigField("boolean", "IS_HERMES_ENABLED", project.findProperty("hermesEnabled")?.toString() ?: "true")
+        buildConfigField("boolean", "IS_EDGE_TO_EDGE_ENABLED", project.findProperty("edgeToEdgeEnabled")?.toString() ?: "false")
     }
 
     buildTypes {
@@ -40,13 +45,6 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
-    }
-
-    defaultConfig {
-        // React Native build config fields
-        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", project.findProperty("newArchEnabled")?.toString() ?: "true")
-        buildConfigField("boolean", "IS_HERMES_ENABLED", project.findProperty("hermesEnabled")?.toString() ?: "true")
-        buildConfigField("boolean", "IS_EDGE_TO_EDGE_ENABLED", project.findProperty("edgeToEdgeEnabled")?.toString() ?: "false")
     }
 }
 
