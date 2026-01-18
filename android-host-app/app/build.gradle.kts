@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -71,6 +73,14 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
 
+// Read local.properties for machine-specific settings
+val localProperties = Properties().apply {
+    val localPropertiesFile = rootProject.file("local.properties")
+    if (localPropertiesFile.exists()) {
+        load(localPropertiesFile.inputStream())
+    }
+}
+
 react {
     // Configure paths for brownfield setup
     root = file("../../react-native-embedded-app")
@@ -78,8 +88,13 @@ react {
     cliFile = file("../../react-native-embedded-app/node_modules/react-native/cli.js")
     entryFile = file("../../react-native-embedded-app/index.js")
     
-    // Full path to node for Android Studio compatibility (nvm path)
-    nodeExecutableAndArgs = listOf("/Users/rick/.nvm/versions/node/v20.19.4/bin/node")
+    // Node executable: checks local.properties -> env variable -> defaults to "node" (must be in PATH)
+    // For local dev with nvm, add to local.properties: node.dir=/path/to/node
+    // For CI/CD, ensure node is in PATH or set NODE_BINARY env variable
+    val nodePath = localProperties.getProperty("node.dir")
+        ?: System.getenv("NODE_BINARY")
+        ?: "node"
+    nodeExecutableAndArgs = listOf(nodePath)
     
     // Needed to enable Autolinking
     autolinkLibrariesWithApp()
