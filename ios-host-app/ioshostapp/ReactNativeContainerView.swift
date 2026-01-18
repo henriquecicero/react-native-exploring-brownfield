@@ -12,24 +12,9 @@ import React_RCTAppDelegate
 import ReactAppDependencyProvider
 
 struct ReactNativeContainerView: View {
-    @Environment(\.dismiss) private var dismiss
-
     var body: some View {
-        ZStack(alignment: .topTrailing) {
-            ReactNativeView()
-                .ignoresSafeArea()
-
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.headline)
-                    .padding(12)
-                    .background(.ultraThinMaterial)
-                    .clipShape(Circle())
-            }
-            .padding()
-        }
+        ReactNativeView()
+            .ignoresSafeArea()
     }
 }
 
