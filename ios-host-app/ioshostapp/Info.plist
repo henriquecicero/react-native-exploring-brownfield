@@ -17,10 +17,23 @@
 	<false/>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Allow access to the local network for the React Native development server.</string>
+	<key>RNMetroHost</key>
+	<string>192.168.1.18:8081</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>192.168.1.18</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>

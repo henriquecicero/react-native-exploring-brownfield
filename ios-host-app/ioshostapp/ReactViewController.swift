@@ -32,17 +32,6 @@ class ReactViewController: UIViewController {
     @objc private func closePressed() {
         dismiss(animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -54,8 +43,10 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
     override func bundleURL() -> URL? {
       #if DEBUG
       let bundleURLProvider = RCTBundleURLProvider.sharedSettings()
-      // Physical device needs the Mac host; update if your IP changes.
-      bundleURLProvider.jsLocation = "192.168.1.18:8081"
+      if let metroHost = Bundle.main.object(forInfoDictionaryKey: "RNMetroHost") as? String,
+         !metroHost.isEmpty {
+        bundleURLProvider.jsLocation = metroHost
+      }
       return bundleURLProvider.jsBundleURL(forBundleRoot: "index")
       #else
       return Bundle.main.url(forResource: "main", withExtension: "jsbundle")
