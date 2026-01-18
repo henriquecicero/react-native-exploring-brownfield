@@ -22,8 +22,7 @@ struct ContentView: View {
         }
         .padding()
         .fullScreenCover(isPresented: $showReactNative) {
-            ReactViewControllerWrapper()
-                .ignoresSafeArea()
+            ReactNativeContainerView()
         }
     }
 }
