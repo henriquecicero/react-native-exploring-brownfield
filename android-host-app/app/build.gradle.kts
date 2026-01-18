@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.facebook.react")
 }
 
 android {
@@ -30,14 +31,22 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+
+    defaultConfig {
+        // React Native build config fields
+        buildConfigField("boolean", "IS_NEW_ARCHITECTURE_ENABLED", project.findProperty("newArchEnabled")?.toString() ?: "true")
+        buildConfigField("boolean", "IS_HERMES_ENABLED", project.findProperty("hermesEnabled")?.toString() ?: "true")
+        buildConfigField("boolean", "IS_EDGE_TO_EDGE_ENABLED", project.findProperty("edgeToEdgeEnabled")?.toString() ?: "false")
     }
 }
 
@@ -50,6 +59,11 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
+    // React Native dependencies
+    implementation("com.facebook.react:react-android")
+    implementation("com.facebook.react:hermes-android")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -57,4 +71,23 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+}
+
+react {
+    // Configure paths for brownfield setup
+    root = file("../../react-native-embedded-app")
+    reactNativeDir = file("../../react-native-embedded-app/node_modules/react-native")
+    cliFile = file("../../react-native-embedded-app/node_modules/react-native/cli.js")
+    entryFile = file("../../react-native-embedded-app/index.js")
+    
+    // Full path to node for Android Studio compatibility (nvm path)
+    nodeExecutableAndArgs = listOf("/Users/rick/.nvm/versions/node/v20.19.4/bin/node")
+    
+    // Needed to enable Autolinking
+    autolinkLibrariesWithApp()
+}
+
+// Disable generated entry point as we use our own MainApplication
+afterEvaluate {
+    tasks.findByName("generateReactNativeEntryPoint")?.enabled = false
 }
