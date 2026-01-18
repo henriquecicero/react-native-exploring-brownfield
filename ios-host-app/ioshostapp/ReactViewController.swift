@@ -18,10 +18,19 @@ class ReactViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .close,
+            target: self,
+            action: #selector(closePressed)
+        )
         reactNativeFactoryDelegate = ReactNativeDelegate()
         reactNativeFactoryDelegate!.dependencyProvider = RCTAppDependencyProvider()
         reactNativeFactory = RCTReactNativeFactory(delegate: reactNativeFactoryDelegate!)
         view = reactNativeFactory!.rootViewFactory.view(withModuleName: "reactnativeembeddedapp")
+    }
+
+    @objc private func closePressed() {
+        dismiss(animated: true)
     }
     
 

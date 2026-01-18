@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ReactViewControllerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> ReactViewController {
-        return ReactViewController()
+    func makeUIViewController(context: Context) -> UIViewController {
+        UINavigationController(rootViewController: ReactViewController())
     }
     
-    func updateUIViewController(_ uiViewController: ReactViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         // No updates needed
     }
 }
