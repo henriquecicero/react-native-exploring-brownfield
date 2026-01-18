@@ -6,13 +6,35 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		AB31B5819CB0E5C026E66E29 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 44CCD2676A79082E895BB204 /* PrivacyInfo.xcprivacy */; };
+		DB18127464329011D840C937 /* libPods-ioshostapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E8A923B9E013491692E305 /* libPods-ioshostapp.a */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1DAB8EDB2F1C669700927FAE /* ioshostapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioshostapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BF6AE2FE6054832B8BBB2AC /* Pods-ioshostapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioshostapp.release.xcconfig"; path = "Target Support Files/Pods-ioshostapp/Pods-ioshostapp.release.xcconfig"; sourceTree = "<group>"; };
+		39C5CBA9215DE7A62D330BE2 /* Pods-ioshostapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioshostapp.debug.xcconfig"; path = "Target Support Files/Pods-ioshostapp/Pods-ioshostapp.debug.xcconfig"; sourceTree = "<group>"; };
+		44CCD2676A79082E895BB204 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		99E8A923B9E013491692E305 /* libPods-ioshostapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ioshostapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1D5113A42F1D533B00945181 /* Exceptions for "ioshostapp" folder in "ioshostapp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 1DAB8EDA2F1C669700927FAE /* ioshostapp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		1DAB8EDD2F1C669700927FAE /* ioshostapp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1D5113A42F1D533B00945181 /* Exceptions for "ioshostapp" folder in "ioshostapp" target */,
+			);
 			path = ioshostapp;
 			sourceTree = "<group>";
 		};
@@ -23,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB18127464329011D840C937 /* libPods-ioshostapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +57,9 @@
 			children = (
 				1DAB8EDD2F1C669700927FAE /* ioshostapp */,
 				1DAB8EDC2F1C669700927FAE /* Products */,
+				44CCD2676A79082E895BB204 /* PrivacyInfo.xcprivacy */,
+				BFB9E97BC237CD5B1B4F4EF1 /* Pods */,
+				CD31C30DEB816527B4C496EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +71,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BFB9E97BC237CD5B1B4F4EF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39C5CBA9215DE7A62D330BE2 /* Pods-ioshostapp.debug.xcconfig */,
+				2BF6AE2FE6054832B8BBB2AC /* Pods-ioshostapp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD31C30DEB816527B4C496EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99E8A923B9E013491692E305 /* libPods-ioshostapp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -52,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DAB8EE62F1C669900927FAE /* Build configuration list for PBXNativeTarget "ioshostapp" */;
 			buildPhases = (
+				DE82DA058A20AB9B58EC2DCF /* [CP] Check Pods Manifest.lock */,
 				1DAB8ED72F1C669700927FAE /* Sources */,
 				1DAB8ED82F1C669700927FAE /* Frameworks */,
 				1DAB8ED92F1C669700927FAE /* Resources */,
+				9FA185423876DA2333B4F4C5 /* [CP] Embed Pods Frameworks */,
+				67681E54620CDD0AA279C02B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -64,8 +110,6 @@
 				1DAB8EDD2F1C669700927FAE /* ioshostapp */,
 			);
 			name = ioshostapp;
-			packageProductDependencies = (
-			);
 			productName = ioshostapp;
 			productReference = 1DAB8EDB2F1C669700927FAE /* ioshostapp.app */;
 			productType = "com.apple.product-type.application";
@@ -109,10 +153,70 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB31B5819CB0E5C026E66E29 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67681E54620CDD0AA279C02B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ioshostapp/Pods-ioshostapp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ioshostapp/Pods-ioshostapp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ioshostapp/Pods-ioshostapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FA185423876DA2333B4F4C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ioshostapp/Pods-ioshostapp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ioshostapp/Pods-ioshostapp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ioshostapp/Pods-ioshostapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE82DA058A20AB9B58EC2DCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ioshostapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1DAB8ED72F1C669700927FAE /* Sources */ = {
@@ -132,7 +236,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -183,9 +287,13 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../react-native-embedded-app/node_modules/react-native";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -196,7 +304,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -240,14 +348,19 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../react-native-embedded-app/node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		1DAB8EE72F1C669900927FAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39C5CBA9215DE7A62D330BE2 /* Pods-ioshostapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -255,8 +368,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9DUHPMPUPR;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ioshostapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -280,6 +394,7 @@
 		};
 		1DAB8EE82F1C669900927FAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BF6AE2FE6054832B8BBB2AC /* Pods-ioshostapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -287,8 +402,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9DUHPMPUPR;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ioshostapp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showReactNative = false
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("Hello, iOS!")
+                .font(.title)
+            
+            Button("Open React Native") {
+                showReactNative = true
+            }
+            .buttonStyle(.borderedProminent)
         }
         .padding()
+        .fullScreenCover(isPresented: $showReactNative) {
+            ReactViewControllerWrapper()
+                .ignoresSafeArea()
+        }
     }
 }
 
