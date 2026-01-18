@@ -14,7 +14,7 @@ struct ContentView: View {
                 Text("Hello, Host App!")
                     .font(.title)
 
-                NavigationLink("Open React Native") {
+                NavigationLink("Open Embedded App") {
                     ReactNativeContainerView()
                 }
                 .buttonStyle(.borderedProminent)

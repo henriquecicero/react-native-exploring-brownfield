@@ -57,7 +57,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
                 context.startActivity(intent)
             }
         ) {
-            Text("Open React Native")
+            Text("Open Embedded App")
         }
     }
 }
