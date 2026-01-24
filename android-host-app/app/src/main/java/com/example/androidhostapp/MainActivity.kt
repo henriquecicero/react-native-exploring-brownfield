@@ -59,6 +59,15 @@ fun MainScreen(modifier: Modifier = Modifier) {
         ) {
             Text("Open Embedded App")
         }
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(
+            onClick = {
+                val intent = Intent(context, SignInActivity::class.java)
+                context.startActivity(intent)
+            }
+        ) {
+            Text("Open Sign In")
+        }
     }
 }
 
